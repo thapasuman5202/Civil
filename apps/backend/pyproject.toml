@@ -1,0 +1,25 @@
+[project]
+name = "backend"
+version = "0.1.0"
+dependencies = [
+  "fastapi",
+  "uvicorn[standard]",
+  "sqlalchemy",
+  "pydantic",
+  "passlib[bcrypt]",
+  "PyJWT",
+  "alembic",
+  "psycopg[binary]"
+]
+[project.optional-dependencies]
+test = ["httpx", "pytest", "pytest-asyncio"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88

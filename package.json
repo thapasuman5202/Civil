@@ -1,0 +1,14 @@
+{
+  "name": "civil-stage-zero",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "lint": "echo lint ok",
+    "test": "echo test ok",
+    "build": "echo build ok"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
