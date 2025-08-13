@@ -1,0 +1,15 @@
+{
+  "name": "@civil/shared",
+  "version": "0.1.0",
+  "private": true,
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "generate": "openapi-typescript ../apps/backend/openapi.json -o src/api-client/index.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "openapi-typescript": "^6.2.0",
+    "axios": "^1.5.0"
+  }
+}

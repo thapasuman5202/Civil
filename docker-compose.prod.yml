@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: civil
+    ports:
+      - '5432:5432'
+  backend:
+    build: ./apps/backend
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    environment:
+      DATABASE_URL: postgresql+psycopg://postgres:postgres@db:5432/civil
+      SECRET_KEY: secret
+    depends_on:
+      - db
+  frontend:
+    build: ./apps/frontend
+    command: pnpm start
+    ports:
+      - '3000:3000'
+    depends_on:
+      - backend
